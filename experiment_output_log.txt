@@ -1,0 +1,1101 @@
+[18:39:49] ======================================================================
+[18:39:49] CityGML → I3S Complete Workflow with Map Selection
+[18:39:49] ======================================================================
+[18:39:49] Workflow:
+[18:39:49] 1. Connect to database and select LOD
+[18:39:49] 2. Load components on map for preview
+[18:39:49] 3. Configure workflow settings
+[18:39:49] 4. Export CityGML → Convert to 3D Tiles → Convert to I3S SLPK
+[18:39:49] ======================================================================
+[18:40:05] 🎚️ LOD filter set to: LOD2
+[18:40:09] ✅ Successfully connected to 3d-DB-lod@localhost
+[18:40:12] 🔍 Loading building components with LOD filter: LOD2...
+[18:40:12] Checking available LODs in database...
+[18:40:13] Available LODs in database:
+[18:40:13]   lod2MultiSurface: 7 features
+[18:40:13]   lod2Solid: 1 features
+[18:40:13]   lod3MultiSurface: 20 features
+[18:40:13]   lod3Solid: 1 features
+[18:40:13]   lod4Geometry: 25 features
+[18:40:13]   lod4MultiSurface: 87 features
+[18:40:13]   lod4Solid: 8 features
+[18:40:13] Available building types:
+[18:40:13]   BuildingFurniture: 15
+[18:40:13]   BuildingInstallation: 10
+[18:40:13]   BuildingRoom: 7
+[18:40:13]   Building: 3
+[18:40:13] Using envelope (bounding box) for footprint extraction...
+[18:40:13] Executing query...
+[18:40:13] 📊 Found 8 building components
+[18:40:13] Component types loaded:
+[18:40:13]   Building: 1
+[18:40:13]   WallSurface: 4
+[18:40:13]   RoofSurface: 2
+[18:40:13]   GroundSurface: 1
+[18:40:13] LOD distribution:
+[18:40:13]   LOD2: 8
+[18:40:13] ⚠️ Unsupported geometry type for component 2: LineString
+[18:40:13] ⚠️ Unsupported geometry type for component 3: LineString
+[18:40:13] ⚠️ Unsupported geometry type for component 4: LineString
+[18:40:13] ⚠️ Unsupported geometry type for component 6: LineString
+[18:40:13] 📐 Component bounds calculated:
+[18:40:13]   Center: (49.103194, 8.422505)
+[18:40:13]   Extent: 0.000091° lat × 0.000165° lon
+[18:40:13] 📈 Successfully plotted 4/8 components
+[18:40:13] ✅ 8 building components loaded successfully
+[18:40:18] 📐 Zooming to bounds:
+[18:40:18]   Center: (49.103194, 8.422505)
+[18:40:18]   Min: (49.103148, 8.422422)
+[18:40:18]   Max: (49.103239, 8.422588)
+[18:40:18] 📍 Zoomed to components (zoom level: 18)
+[18:40:33] ======================================================================
+[18:40:33] 🚀 Starting complete workflow for LOD2...
+[18:40:33] 🎯 LOD Filter: LOD2
+[18:40:33] 📋 Export Mode: Exterior Only
+[18:40:33] 🎯 LOD Mode: Exact Match
+[18:40:33] ======================================================================
+[18:40:33] 📤 Step 1: Exporting to CityGML...
+[18:40:33] 📋 Export command:
+[18:40:33] "C:\3dcitydb-master\citydb-tool-1.1.0\citydb.bat" export citygml --db-host "localhost" --db-port 5432 --db-name "3d-DB-lod" --db-schema citydb --db-username "postgres" --db-password "c1h1u1k1s1" --output "C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod2_20260223_184033.gml" --citygml-version 2.0 --no-appearances --lod 2 --type-name "bldg:Building" --lod-mode and --lod-search-depth all
+[18:40:33] Running: "C:\3dcitydb-master\citydb-tool-1.1.0\citydb.bat" export citygml --db-host "localhost" --db-port 543...
+[18:40:38] [18:40:38 INFO] Starting citydb-tool, version 1.1.0.
+[18:40:38] [18:40:38 INFO] Loading plugins...
+[18:40:38] [18:40:38 INFO] Executing 'export citygml' command.
+[18:40:38] [18:40:38 INFO] Connecting to database postgres@localhost:5432/3d-DB-lod.
+[18:40:39] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[18:40:39] WARNING: sun.misc.Unsafe::arrayBaseOffset has been called by com.alibaba.fastjson2.util.JDKUtils (file:/C:/3dcitydb-master/citydb-tool-1.1.0/lib/fastjson2-2.0.58.jar)
+[18:40:39] WARNING: Please consider reporting this to the maintainers of class com.alibaba.fastjson2.util.JDKUtils
+[18:40:39] WARNING: sun.misc.Unsafe::arrayBaseOffset will be removed in a future release
+[18:40:39] [18:40:39 INFO] 3D City Database: 5.1.0
+[18:40:39] [18:40:39 INFO] DBMS: PostgreSQL 16.2 (PostGIS 3.4.1, SFCGAL 1.5.0)
+[18:40:39] [18:40:39 INFO] Connection: postgres@localhost:5432/3d-DB-lod
+[18:40:39] [18:40:39 INFO] Schema: citydb
+[18:40:39] [18:40:39 INFO] SRID: 25832
+[18:40:39] [18:40:39 INFO] SRS name: ETRS89 / UTM zone 32N
+[18:40:39] [18:40:39 INFO] SRS URI: EPSG:25832
+[18:40:39] [18:40:39 INFO] Changelog: disabled
+[18:40:39] [18:40:39 INFO] Database indexes are on.
+[18:40:40] [18:40:40 INFO] Exporting to CityGML file C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod2_20260223_184033.gml.
+[18:40:40] [18:40:40 INFO] Export summary:
+[18:40:40] [18:40:40 INFO] bldg:Building: 1
+[18:40:40] [18:40:40 INFO] con:GroundSurface: 1
+[18:40:40] [18:40:40 INFO] con:RoofSurface: 2
+[18:40:40] [18:40:40 INFO] con:WallSurface: 4
+[18:40:40] [18:40:40 INFO] Total execution time: 02 s.
+[18:40:40] [18:40:40 INFO] citydb successfully completed.
+[18:40:40] ✅ CityGML exported: export_lod2_20260223_184033.gml (0.01 MB)
+[18:40:42] 🔄 Step 2: Converting to 3D Tiles...
+[18:40:42] 🔄 Converting CityGML to 3D Tiles...
+[18:40:42] Running: citygml-to-3dtiles "C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod2_20260223_184033....
+[18:41:17] Converting...
+[18:41:17] Reading CityGML file 1/1...
+[18:41:17]  Found 1 city objects.
+[18:41:17] Converting to 3D Tiles...
+[18:41:17] Writing 3D Tiles...
+[18:41:17] Done.
+[18:41:17] Done.
+[18:41:17] ✅ 3D Tiles created successfully
+[18:41:19] 📦 Step 3: Converting to I3S SLPK...
+[18:41:19] 📦 Converting to I3S SLPK...
+[18:41:19] Running: npx tile-converter --input-type 3DTILES --tileset "converter_tiles/tileset.json" --name "city_model"...
+[18:41:20] npm warn cli npm v11.6.2 does not support Node.js v16.20.2. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+[18:41:33] ------------------------------------------------
+[18:41:33] Starting conversion of 3DTILES
+[18:41:33] ------------------------------------------------
+[18:41:33] Loading egm file...
+[18:41:33] Loading egm file completed!
+[18:41:33] Loading workers source...
+[18:41:48] Loading workers source completed!
+[18:41:48] (node:34216) [DEP0147] DeprecationWarning: In future versions of Node.js, fs.rmdir(path, { recursive: true }) will be removed. Use fs.rm(path, { recursive: true }) instead
+[18:41:48] (Use `node --trace-deprecation ...` to show where the warning was created)
+[18:41:48] Converting glTF v1 to glTF v2 format. This is experimental and may fail.
+[18:41:48] temp_output_i3s\city_model\SceneServer\index.json saved.
+[18:41:48] temp_output_i3s\city_model\SceneServer\layers\0\3dSceneLayer.json saved.
+[18:41:48] temp_output_i3s\city_model\SceneServer\layers\0\metadata.json saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_0\0.bin saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\3dNodeIndexDocument.json saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodepages\0.json saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\root\3dNodeIndexDocument.json saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\0.bin saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_1\0.bin saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_3\0.bin saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_2\0.bin saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\shared\sharedResource.json saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_4\0.bin saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_0\0.bin.gz compressed and saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\3dSceneLayer.json.gz compressed and saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodepages\0.json.gz compressed and saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\3dNodeIndexDocument.json.gz compressed and saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\root\3dNodeIndexDocument.json.gz compressed and saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_2\0.bin.gz compressed and saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_3\0.bin.gz compressed and saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_1\0.bin.gz compressed and saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_4\0.bin.gz compressed and saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\0.bin.gz compressed and saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\shared\sharedResource.json.gz compressed and saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\1.bin saved.
+[18:41:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\1.bin.gz compressed and saved.
+[18:41:49] Spawning C:\Program Files\7-Zip\7z.exe a -tzip -mx=0 C:\CITYGML2I3S_WORKFLOW\i3s-CONVERTER-3.0\temp_output_i3s\city_model.slpk .
+[18:41:49] 
+[18:41:49] 7-Zip 25.01 (x64) : Copyright (c) 1999-2025 Igor Pavlov : 2025-08-03
+[18:41:49] 
+[18:41:49] Scanning the drive:
+[18:41:49] 12 folders, 13 files, 3881 bytes (4 KiB)
+[18:41:49] 
+[18:41:49] Creating archive: C:\CITYGML2I3S_WORKFLOW\i3s-CONVERTER-3.0\temp_output_i3s\city_model.slpk
+[18:41:49] 
+[18:41:49] Add new data to archive: 12 folders, 13 files, 3881 bytes (4 KiB)
+[18:41:49] 
+[18:41:49] 
+[18:41:49] Files read from disk: 13
+[18:41:50] Archive size: 7851 bytes (8 KiB)
+[18:41:50] 
+[18:41:50] Everything is Ok
+[18:41:50] 
+[18:41:50] Child process exited with 0
+[18:41:50] ------------------------------------------------
+[18:41:50] Finishing conversion of 3DTILES
+[18:41:50] Total conversion time: 16s
+[18:41:50] Vertex count:  48
+[18:41:50] File(s) size:  7851  bytes
+[18:41:50] Percentage of tiles with "ADD" refinement type: 0 %
+[18:41:50] ------------------------------------------------
+[18:41:50] ======================================================================
+[18:41:50] ✅ I3S SLPK created: city_model_lod2_20260223_184150.slpk
+[18:41:50] 📦 File size: 0.01 MB
+[18:41:50] 🎯 LOD: LOD2
+[18:41:50] 📋 Export Mode: Exterior Only
+[18:41:50] 🎯 LOD Mode: Exact Match
+[18:41:50] ======================================================================
+[18:41:54] ======================================================================
+[18:41:54] 🎉 Workflow completed!
+[18:41:54] ======================================================================
+[18:41:59] 📋 Console content copied to clipboard
+[18:42:46] 🎚️ LOD filter set to: LOD3
+[18:42:47] ✅ Successfully connected to 3d-DB-lod@localhost
+[18:42:51] 🔍 Loading building components with LOD filter: LOD3...
+[18:42:51] Checking available LODs in database...
+[18:42:51] Available LODs in database:
+[18:42:51]   lod2MultiSurface: 7 features
+[18:42:51]   lod2Solid: 1 features
+[18:42:51]   lod3MultiSurface: 20 features
+[18:42:51]   lod3Solid: 1 features
+[18:42:51]   lod4Geometry: 25 features
+[18:42:51]   lod4MultiSurface: 87 features
+[18:42:51]   lod4Solid: 8 features
+[18:42:51] Available building types:
+[18:42:51]   BuildingFurniture: 15
+[18:42:51]   BuildingInstallation: 10
+[18:42:51]   BuildingRoom: 7
+[18:42:51]   Building: 3
+[18:42:51] Using envelope (bounding box) for footprint extraction...
+[18:42:51] Executing query...
+[18:42:51] 📊 Found 21 building components
+[18:42:51] Component types loaded:
+[18:42:51]   Building: 1
+[18:42:51]   WallSurface: 4
+[18:42:51]   WindowSurface: 11
+[18:42:51]   DoorSurface: 2
+[18:42:51]   RoofSurface: 2
+[18:42:51]   GroundSurface: 1
+[18:42:51] LOD distribution:
+[18:42:51]   LOD3: 21
+[18:42:51] ⚠️ Unsupported geometry type for component 11: LineString
+[18:42:51] ⚠️ Unsupported geometry type for component 12: LineString
+[18:42:51] ⚠️ Unsupported geometry type for component 13: LineString
+[18:42:51] ⚠️ Unsupported geometry type for component 14: LineString
+[18:42:51] ⚠️ Unsupported geometry type for component 16: LineString
+[18:42:51] ⚠️ Unsupported geometry type for component 17: LineString
+[18:42:51] ⚠️ Unsupported geometry type for component 18: LineString
+[18:42:51] ⚠️ Unsupported geometry type for component 20: LineString
+[18:42:51] ⚠️ Unsupported geometry type for component 21: LineString
+[18:42:51] ⚠️ Unsupported geometry type for component 22: LineString
+[18:42:51] ⚠️ Unsupported geometry type for component 25: LineString
+[18:42:51] ⚠️ Unsupported geometry type for component 26: LineString
+[18:42:51] ⚠️ Unsupported geometry type for component 27: LineString
+[18:42:51] 📐 Component bounds calculated:
+[18:42:51]   Center: (49.103194, 8.422505)
+[18:42:51]   Extent: 0.000100° lat × 0.000179° lon
+[18:42:51] 📈 Successfully plotted 8/21 components
+[18:42:51] ✅ 21 building components loaded successfully
+[18:42:56] 📐 Zooming to bounds:
+[18:42:56]   Center: (49.103194, 8.422505)
+[18:42:56]   Min: (49.103144, 8.422416)
+[18:42:56]   Max: (49.103243, 8.422595)
+[18:42:56] 📍 Zoomed to components (zoom level: 18)
+[18:43:06] ======================================================================
+[18:43:06] 🚀 Starting complete workflow for LOD3...
+[18:43:06] 🎯 LOD Filter: LOD3
+[18:43:06] 📋 Export Mode: Exterior Only
+[18:43:06] 🎯 LOD Mode: Exact Match
+[18:43:06] ======================================================================
+[18:43:06] 📤 Step 1: Exporting to CityGML...
+[18:43:06] 📋 Export command:
+[18:43:06] "C:\3dcitydb-master\citydb-tool-1.1.0\citydb.bat" export citygml --db-host "localhost" --db-port 5432 --db-name "3d-DB-lod" --db-schema citydb --db-username "postgres" --db-password "c1h1u1k1s1" --output "C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod3_20260223_184306.gml" --citygml-version 2.0 --no-appearances --lod 3 --type-name "bldg:Building" --lod-mode and --lod-search-depth all
+[18:43:06] Running: "C:\3dcitydb-master\citydb-tool-1.1.0\citydb.bat" export citygml --db-host "localhost" --db-port 543...
+[18:43:07] [18:43:07 INFO] Starting citydb-tool, version 1.1.0.
+[18:43:07] [18:43:07 INFO] Loading plugins...
+[18:43:07] [18:43:07 INFO] Executing 'export citygml' command.
+[18:43:08] [18:43:08 INFO] Connecting to database postgres@localhost:5432/3d-DB-lod.
+[18:43:08] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[18:43:08] WARNING: sun.misc.Unsafe::arrayBaseOffset has been called by com.alibaba.fastjson2.util.JDKUtils (file:/C:/3dcitydb-master/citydb-tool-1.1.0/lib/fastjson2-2.0.58.jar)
+[18:43:08] WARNING: Please consider reporting this to the maintainers of class com.alibaba.fastjson2.util.JDKUtils
+[18:43:08] WARNING: sun.misc.Unsafe::arrayBaseOffset will be removed in a future release
+[18:43:09] [18:43:09 INFO] 3D City Database: 5.1.0
+[18:43:09] [18:43:09 INFO] DBMS: PostgreSQL 16.2 (PostGIS 3.4.1, SFCGAL 1.5.0)
+[18:43:09] [18:43:09 INFO] Connection: postgres@localhost:5432/3d-DB-lod
+[18:43:09] [18:43:09 INFO] Schema: citydb
+[18:43:09] [18:43:09 INFO] SRID: 25832
+[18:43:09] [18:43:09 INFO] SRS name: ETRS89 / UTM zone 32N
+[18:43:09] [18:43:09 INFO] SRS URI: EPSG:25832
+[18:43:09] [18:43:09 INFO] Changelog: disabled
+[18:43:09] [18:43:09 INFO] Database indexes are on.
+[18:43:09] [18:43:09 INFO] Exporting to CityGML file C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod3_20260223_184306.gml.
+[18:43:10] [18:43:10 INFO] Export summary:
+[18:43:10] [18:43:10 INFO] bldg:Building: 1
+[18:43:10] [18:43:10 INFO] con:DoorSurface: 2
+[18:43:10] [18:43:10 INFO] con:GroundSurface: 1
+[18:43:10] [18:43:10 INFO] con:RoofSurface: 2
+[18:43:10] [18:43:10 INFO] con:WallSurface: 4
+[18:43:10] [18:43:10 INFO] con:WindowSurface: 11
+[18:43:10] [18:43:10 INFO] Total execution time: 02 s.
+[18:43:10] [18:43:10 INFO] citydb successfully completed.
+[18:43:10] ✅ CityGML exported: export_lod3_20260223_184306.gml (0.16 MB)
+[18:43:11] 🔄 Step 2: Converting to 3D Tiles...
+[18:43:11] 🔄 Converting CityGML to 3D Tiles...
+[18:43:11] Running: citygml-to-3dtiles "C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod3_20260223_184306....
+[18:43:14] Converting...
+[18:43:14] Reading CityGML file 1/1...
+[18:43:14]  Found 1 city objects.
+[18:43:14] Converting to 3D Tiles...
+[18:43:14] Writing 3D Tiles...
+[18:43:14] Done.
+[18:43:14] Done.
+[18:43:14] ✅ 3D Tiles created successfully
+[18:43:16] 📦 Step 3: Converting to I3S SLPK...
+[18:43:16] 📦 Converting to I3S SLPK...
+[18:43:16] Running: npx tile-converter --input-type 3DTILES --tileset "converter_tiles/tileset.json" --name "city_model"...
+[18:43:16] npm warn cli npm v11.6.2 does not support Node.js v16.20.2. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+[18:43:17] ------------------------------------------------
+[18:43:17] Starting conversion of 3DTILES
+[18:43:17] ------------------------------------------------
+[18:43:17] Loading egm file...
+[18:43:17] Loading egm file completed!
+[18:43:17] Loading workers source...
+[18:43:17] Loading workers source completed!
+[18:43:17] (node:93676) [DEP0147] DeprecationWarning: In future versions of Node.js, fs.rmdir(path, { recursive: true }) will be removed. Use fs.rm(path, { recursive: true }) instead
+[18:43:17] (Use `node --trace-deprecation ...` to show where the warning was created)
+[18:43:17] Converting glTF v1 to glTF v2 format. This is experimental and may fail.
+[18:43:17] temp_output_i3s\city_model\SceneServer\index.json saved.
+[18:43:17] temp_output_i3s\city_model\SceneServer\layers\0\3dSceneLayer.json saved.
+[18:43:17] temp_output_i3s\city_model\SceneServer\layers\0\metadata.json saved.
+[18:43:17] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\3dNodeIndexDocument.json saved.
+[18:43:17] temp_output_i3s\city_model\SceneServer\layers\0\nodepages\0.json saved.
+[18:43:17] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_1\0.bin saved.
+[18:43:17] temp_output_i3s\city_model\SceneServer\layers\0\nodes\root\3dNodeIndexDocument.json saved.
+[18:43:17] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_0\0.bin saved.
+[18:43:17] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_2\0.bin saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_3\0.bin saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\shared\sharedResource.json saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\0.bin saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_4\0.bin saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_1\0.bin.gz compressed and saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\nodes\root\3dNodeIndexDocument.json.gz compressed and saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\3dNodeIndexDocument.json.gz compressed and saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_0\0.bin.gz compressed and saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\nodepages\0.json.gz compressed and saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_2\0.bin.gz compressed and saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_3\0.bin.gz compressed and saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\3dSceneLayer.json.gz compressed and saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\shared\sharedResource.json.gz compressed and saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_4\0.bin.gz compressed and saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\0.bin.gz compressed and saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\1.bin saved.
+[18:43:18] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\1.bin.gz compressed and saved.
+[18:43:18] Spawning C:\Program Files\7-Zip\7z.exe a -tzip -mx=0 C:\CITYGML2I3S_WORKFLOW\i3s-CONVERTER-3.0\temp_output_i3s\city_model.slpk .
+[18:43:18] 
+[18:43:18] 7-Zip 25.01 (x64) : Copyright (c) 1999-2025 Igor Pavlov : 2025-08-03
+[18:43:18] 
+[18:43:18] Scanning the drive:
+[18:43:18] 12 folders, 13 files, 33222 bytes (33 KiB)
+[18:43:18] 
+[18:43:18] Creating archive: C:\CITYGML2I3S_WORKFLOW\i3s-CONVERTER-3.0\temp_output_i3s\city_model.slpk
+[18:43:18] 
+[18:43:18] Add new data to archive: 12 folders, 13 files, 33222 bytes (33 KiB)
+[18:43:18] 
+[18:43:18] 
+[18:43:18] Files read from disk: 13
+[18:43:18] Archive size: 37192 bytes (37 KiB)
+[18:43:18] 
+[18:43:18] Everything is Ok
+[18:43:18] 
+[18:43:18] Child process exited with 0
+[18:43:18] ------------------------------------------------
+[18:43:18] Finishing conversion of 3DTILES
+[18:43:18] Total conversion time: 1s
+[18:43:18] Vertex count:  2184
+[18:43:18] File(s) size:  37192  bytes
+[18:43:18] Percentage of tiles with "ADD" refinement type: 0 %
+[18:43:18] ------------------------------------------------
+[18:43:18] ======================================================================
+[18:43:18] ✅ I3S SLPK created: city_model_lod3_20260223_184318.slpk
+[18:43:18] 📦 File size: 0.04 MB
+[18:43:18] 🎯 LOD: LOD3
+[18:43:18] 📋 Export Mode: Exterior Only
+[18:43:18] 🎯 LOD Mode: Exact Match
+[18:43:18] ======================================================================
+[18:43:20] ======================================================================
+[18:43:20] 🎉 Workflow completed!
+[18:43:20] ======================================================================
+[18:43:25] 📋 Console content copied to clipboard
+[18:45:07] 🎚️ LOD filter set to: LOD4
+[18:45:08] ✅ Successfully connected to 3d-DB-lod@localhost
+[18:45:13] 🔍 Loading building components with LOD filter: LOD4...
+[18:45:13] Checking available LODs in database...
+[18:45:13] Available LODs in database:
+[18:45:13]   lod2MultiSurface: 7 features
+[18:45:13]   lod2Solid: 1 features
+[18:45:13]   lod3MultiSurface: 20 features
+[18:45:13]   lod3Solid: 1 features
+[18:45:13]   lod4Geometry: 25 features
+[18:45:13]   lod4MultiSurface: 87 features
+[18:45:13]   lod4Solid: 8 features
+[18:45:13] Available building types:
+[18:45:13]   BuildingFurniture: 15
+[18:45:13]   BuildingInstallation: 10
+[18:45:13]   BuildingRoom: 7
+[18:45:13]   Building: 3
+[18:45:13] Using envelope (bounding box) for footprint extraction...
+[18:45:13] Executing query...
+[18:45:13] 📊 Found 100 building components
+[18:45:13] Component types loaded:
+[18:45:13]   Building: 1
+[18:45:13]   WallSurface: 4
+[18:45:13]   WindowSurface: 19
+[18:45:13]   DoorSurface: 10
+[18:45:13]   RoofSurface: 2
+[18:45:13]   GroundSurface: 1
+[18:45:13]   BuildingRoom: 6
+[18:45:13]   InteriorWallSurface: 22
+[18:45:13]   CeilingSurface: 6
+[18:45:13]   FloorSurface: 6
+[18:45:13]   BuildingFurniture: 12
+[18:45:13]   BuildingInstallation: 6
+[18:45:13]   ClosureSurface: 5
+[18:45:13] LOD distribution:
+[18:45:13]   LOD4: 100
+[18:45:13] ⚠️ Unsupported geometry type for component 32: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 33: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 34: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 35: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 37: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 38: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 39: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 41: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 42: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 43: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 46: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 47: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 48: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 52: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 54: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 56: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 57: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 58: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 64: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 66: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 67: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 68: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 70: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 81: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 82: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 83: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 85: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 87: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 91: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 92: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 96: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 97: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 99: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 103: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 105: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 107: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 108: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 120: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 121: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 126: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 128: LineString
+[18:45:13] ⚠️ Unsupported geometry type for component 129: LineString
+[18:45:13] 📐 Component bounds calculated:
+[18:45:13]   Center: (49.103194, 8.422505)
+[18:45:13]   Extent: 0.000100° lat × 0.000179° lon
+[18:45:15] 📈 Successfully plotted 58/100 components
+[18:45:15] ✅ 100 building components loaded successfully
+[18:45:26] ======================================================================
+[18:45:26] 🚀 Starting complete workflow for LOD4...
+[18:45:26] 🎯 LOD Filter: LOD4
+[18:45:26] 📋 Export Mode: Exterior Only
+[18:45:27] 🎯 LOD Mode: Exact Match
+[18:45:27] ======================================================================
+[18:45:27] 📤 Step 1: Exporting to CityGML...
+[18:45:27] 📋 Export command:
+[18:45:27] "C:\3dcitydb-master\citydb-tool-1.1.0\citydb.bat" export citygml --db-host "localhost" --db-port 5432 --db-name "3d-DB-lod" --db-schema citydb --db-username "postgres" --db-password "c1h1u1k1s1" --output "C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod4_20260223_184527.gml" --citygml-version 2.0 --no-appearances --lod 4 --type-name "bldg:Building" --lod-mode and --lod-search-depth all
+[18:45:27] Running: "C:\3dcitydb-master\citydb-tool-1.1.0\citydb.bat" export citygml --db-host "localhost" --db-port 543...
+[18:45:28] [18:45:28 INFO] Starting citydb-tool, version 1.1.0.
+[18:45:28] [18:45:28 INFO] Loading plugins...
+[18:45:28] [18:45:28 INFO] Executing 'export citygml' command.
+[18:45:28] [18:45:28 INFO] Connecting to database postgres@localhost:5432/3d-DB-lod.
+[18:45:28] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[18:45:28] WARNING: sun.misc.Unsafe::arrayBaseOffset has been called by com.alibaba.fastjson2.util.JDKUtils (file:/C:/3dcitydb-master/citydb-tool-1.1.0/lib/fastjson2-2.0.58.jar)
+[18:45:28] WARNING: Please consider reporting this to the maintainers of class com.alibaba.fastjson2.util.JDKUtils
+[18:45:28] WARNING: sun.misc.Unsafe::arrayBaseOffset will be removed in a future release
+[18:45:29] [18:45:29 INFO] 3D City Database: 5.1.0
+[18:45:29] [18:45:29 INFO] DBMS: PostgreSQL 16.2 (PostGIS 3.4.1, SFCGAL 1.5.0)
+[18:45:29] [18:45:29 INFO] Connection: postgres@localhost:5432/3d-DB-lod
+[18:45:29] [18:45:29 INFO] Schema: citydb
+[18:45:29] [18:45:29 INFO] SRID: 25832
+[18:45:29] [18:45:29 INFO] SRS name: ETRS89 / UTM zone 32N
+[18:45:29] [18:45:29 INFO] SRS URI: EPSG:25832
+[18:45:29] [18:45:29 INFO] Changelog: disabled
+[18:45:29] [18:45:29 INFO] Database indexes are on.
+[18:45:29] [18:45:29 INFO] Exporting to CityGML file C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod4_20260223_184527.gml.
+[18:45:30] [18:45:30 INFO] Export summary:
+[18:45:30] [18:45:30 INFO] bldg:Building: 1
+[18:45:30] [18:45:30 INFO] bldg:BuildingFurniture: 15
+[18:45:30] [18:45:30 INFO] bldg:BuildingInstallation: 10
+[18:45:30] [18:45:30 INFO] bldg:BuildingRoom: 7
+[18:45:30] [18:45:30 INFO] con:CeilingSurface: 8
+[18:45:30] [18:45:30 INFO] con:DoorSurface: 10
+[18:45:30] [18:45:30 INFO] con:FloorSurface: 7
+[18:45:30] [18:45:30 INFO] con:GroundSurface: 1
+[18:45:30] [18:45:30 INFO] con:InteriorWallSurface: 27
+[18:45:30] [18:45:30 INFO] con:RoofSurface: 2
+[18:45:30] [18:45:30 INFO] con:WallSurface: 4
+[18:45:30] [18:45:30 INFO] con:WindowSurface: 22
+[18:45:30] [18:45:30 INFO] core:ClosureSurface: 6
+[18:45:30] [18:45:30 INFO] Total execution time: 02 s.
+[18:45:30] [18:45:30 INFO] citydb successfully completed.
+[18:45:30] ✅ CityGML exported: export_lod4_20260223_184527.gml (9.04 MB)
+[18:45:32] 🔄 Step 2: Converting to 3D Tiles...
+[18:45:32] 🔄 Converting CityGML to 3D Tiles...
+[18:45:32] Running: citygml-to-3dtiles "C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod4_20260223_184527....
+[18:45:34] Converting...
+[18:45:34] Reading CityGML file 1/1...
+[18:45:35]  Found 1 city objects.
+[18:45:35] Converting to 3D Tiles...
+[18:48:17] Writing 3D Tiles...
+[18:48:17] Done.
+[18:48:17] Done.
+[18:48:17] ✅ 3D Tiles created successfully
+[18:48:21] 📦 Step 3: Converting to I3S SLPK...
+[18:48:21] 📦 Converting to I3S SLPK...
+[18:48:21] Running: npx tile-converter --input-type 3DTILES --tileset "converter_tiles/tileset.json" --name "city_model"...
+[18:48:21] npm warn cli npm v11.6.2 does not support Node.js v16.20.2. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+[18:48:22] ------------------------------------------------
+[18:48:22] Starting conversion of 3DTILES
+[18:48:22] ------------------------------------------------
+[18:48:22] Loading egm file...
+[18:48:22] Loading egm file completed!
+[18:48:22] Loading workers source...
+[18:48:22] Loading workers source completed!
+[18:48:22] (node:41488) [DEP0147] DeprecationWarning: In future versions of Node.js, fs.rmdir(path, { recursive: true }) will be removed. Use fs.rm(path, { recursive: true }) instead
+[18:48:22] (Use `node --trace-deprecation ...` to show where the warning was created)
+[18:48:22] Converting glTF v1 to glTF v2 format. This is experimental and may fail.
+[18:48:22] temp_output_i3s\city_model\SceneServer\index.json saved.
+[18:48:22] temp_output_i3s\city_model\SceneServer\layers\0\3dSceneLayer.json saved.
+[18:48:22] temp_output_i3s\city_model\SceneServer\layers\0\metadata.json saved.
+[18:48:22] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_1\0.bin saved.
+[18:48:22] temp_output_i3s\city_model\SceneServer\layers\0\nodepages\0.json saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\root\3dNodeIndexDocument.json saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\3dNodeIndexDocument.json saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_0\0.bin saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\shared\sharedResource.json saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_4\0.bin saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_2\0.bin saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_1\0.bin.gz compressed and saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_3\0.bin saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodepages\0.json.gz compressed and saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\root\3dNodeIndexDocument.json.gz compressed and saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_0\0.bin.gz compressed and saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\shared\sharedResource.json.gz compressed and saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\3dNodeIndexDocument.json.gz compressed and saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_4\0.bin.gz compressed and saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_2\0.bin.gz compressed and saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\3dSceneLayer.json.gz compressed and saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_3\0.bin.gz compressed and saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\0.bin saved.
+[18:48:23] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\0.bin.gz compressed and saved.
+[18:48:24] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\1.bin saved.
+[18:48:24] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\1.bin.gz compressed and saved.
+[18:48:24] Spawning C:\Program Files\7-Zip\7z.exe a -tzip -mx=0 C:\CITYGML2I3S_WORKFLOW\i3s-CONVERTER-3.0\temp_output_i3s\city_model.slpk .
+[18:48:24] 
+[18:48:24] 7-Zip 25.01 (x64) : Copyright (c) 1999-2025 Igor Pavlov : 2025-08-03
+[18:48:24] 
+[18:48:24] Scanning the drive:
+[18:48:24] 12 folders, 13 files, 1151628 bytes (1125 KiB)
+[18:48:24] 
+[18:48:24] Creating archive: C:\CITYGML2I3S_WORKFLOW\i3s-CONVERTER-3.0\temp_output_i3s\city_model.slpk
+[18:48:24] 
+[18:48:24] Add new data to archive: 12 folders, 13 files, 1151628 bytes (1125 KiB)
+[18:48:24] 
+[18:48:24] 
+[18:48:24] Files read from disk: 13
+[18:48:24] Archive size: 1155598 bytes (1129 KiB)
+[18:48:24] 
+[18:48:24] Everything is Ok
+[18:48:24] 
+[18:48:24] Child process exited with 0
+[18:48:24] ------------------------------------------------
+[18:48:24] Finishing conversion of 3DTILES
+[18:48:24] Total conversion time: 2s
+[18:48:24] Vertex count:  83028
+[18:48:24] File(s) size:  1155598  bytes
+[18:48:24] Percentage of tiles with "ADD" refinement type: 0 %
+[18:48:24] ------------------------------------------------
+[18:48:24] ======================================================================
+[18:48:24] ✅ I3S SLPK created: city_model_lod4_20260223_184824.slpk
+[18:48:24] 📦 File size: 1.10 MB
+[18:48:24] 🎯 LOD: LOD4
+[18:48:24] 📋 Export Mode: Exterior Only
+[18:48:24] 🎯 LOD Mode: Exact Match
+[18:48:24] ======================================================================
+[18:48:31] ======================================================================
+[18:48:31] 🎉 Workflow completed!
+[18:48:31] ======================================================================
+[18:48:47] 📋 Console content copied to clipboard
+[18:49:19] 🎚️ LOD filter set to: LOD2
+[18:49:21] ✅ Successfully connected to 3d-DB-bw@localhost
+[18:49:27] 🔍 Loading building components with LOD filter: LOD2...
+[18:49:27] Checking available LODs in database...
+[18:49:27] Available LODs in database:
+[18:49:27]   lod1Solid: 3212 features
+[18:49:27]   lod2MultiSurface: 40003 features
+[18:49:27]   lod2Solid: 3212 features
+[18:49:27]   lod2TerrainIntersectionCurve: 3212 features
+[18:49:27] Available building types:
+[18:49:27]   Building: 5142
+[18:49:27]   BuildingPart: 2086
+[18:49:27] Using envelope (bounding box) for footprint extraction...
+[18:49:27] Executing query...
+[18:49:27] 📊 Found 100 building components
+[18:49:27] Component types loaded:
+[18:49:27]   Building: 18
+[18:49:27]   WallSurface: 60
+[18:49:27]   RoofSurface: 14
+[18:49:27]   GroundSurface: 8
+[18:49:27] LOD distribution:
+[18:49:27]   LOD2: 100
+[18:49:27] 📐 Component bounds calculated:
+[18:49:27]   Center: (48.775255, 9.155241)
+[18:49:27]   Extent: 0.006857° lat × 0.009368° lon
+[18:49:29] 📈 Successfully plotted 100/100 components
+[18:49:29] ✅ 100 building components loaded successfully
+[18:49:32] 📐 Zooming to bounds:
+[18:49:32]   Center: (48.775255, 9.155241)
+[18:49:32]   Min: (48.771826, 9.150557)
+[18:49:32]   Max: (48.778684, 9.159925)
+[18:49:32] 📍 Zoomed to components (zoom level: 16)
+[18:49:46] ======================================================================
+[18:49:46] 🚀 Starting complete workflow for LOD2...
+[18:49:46] 🎯 LOD Filter: LOD2
+[18:49:46] 📋 Export Mode: Exterior Only
+[18:49:46] 🎯 LOD Mode: Exact Match
+[18:49:46] ======================================================================
+[18:49:46] 📤 Step 1: Exporting to CityGML...
+[18:49:46] 📋 Export command:
+[18:49:46] "C:\3dcitydb-master\citydb-tool-1.1.0\citydb.bat" export citygml --db-host "localhost" --db-port 5432 --db-name "3d-DB-bw" --db-schema citydb --db-username "postgres" --db-password "c1h1u1k1s1" --output "C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod2_20260223_184946.gml" --citygml-version 2.0 --no-appearances --lod 2 --type-name "bldg:Building" --lod-mode and --lod-search-depth all
+[18:49:46] Running: "C:\3dcitydb-master\citydb-tool-1.1.0\citydb.bat" export citygml --db-host "localhost" --db-port 543...
+[18:49:48] [18:49:48 INFO] Starting citydb-tool, version 1.1.0.
+[18:49:48] [18:49:48 INFO] Loading plugins...
+[18:49:48] [18:49:48 INFO] Executing 'export citygml' command.
+[18:49:48] [18:49:48 INFO] Connecting to database postgres@localhost:5432/3d-DB-bw.
+[18:49:48] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[18:49:48] WARNING: sun.misc.Unsafe::arrayBaseOffset has been called by com.alibaba.fastjson2.util.JDKUtils (file:/C:/3dcitydb-master/citydb-tool-1.1.0/lib/fastjson2-2.0.58.jar)
+[18:49:48] WARNING: Please consider reporting this to the maintainers of class com.alibaba.fastjson2.util.JDKUtils
+[18:49:48] WARNING: sun.misc.Unsafe::arrayBaseOffset will be removed in a future release
+[18:49:49] [18:49:49 INFO] 3D City Database: 5.1.0
+[18:49:49] [18:49:49 INFO] DBMS: PostgreSQL 16.2 (PostGIS 3.4.1, SFCGAL 1.5.0)
+[18:49:49] [18:49:49 INFO] Connection: postgres@localhost:5432/3d-DB-bw
+[18:49:49] [18:49:49 INFO] Schema: citydb
+[18:49:49] [18:49:49 INFO] SRID: 25832
+[18:49:49] [18:49:49 INFO] SRS name: ETRS89 / UTM zone 32N
+[18:49:49] [18:49:49 INFO] SRS URI: EPSG:25832
+[18:49:49] [18:49:49 INFO] Changelog: disabled
+[18:49:49] [18:49:49 INFO] Database indexes are on.
+[18:49:49] [18:49:49 INFO] Exporting to CityGML file C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod2_20260223_184946.gml.
+[18:49:52] [18:49:52 INFO] 1000 features exported.
+[18:49:53] [18:49:53 INFO] 2000 features exported.
+[18:49:53] [18:49:53 INFO] Export summary:
+[18:49:53] [18:49:53 INFO] bldg:Building: 2571
+[18:49:53] [18:49:53 INFO] bldg:BuildingPart: 1043
+[18:49:53] [18:49:53 INFO] con:GroundSurface: 3212
+[18:49:53] [18:49:53 INFO] con:RoofSurface: 7187
+[18:49:53] [18:49:53 INFO] con:WallSurface: 27863
+[18:49:53] [18:49:53 INFO] core:ClosureSurface: 1741
+[18:49:53] [18:49:53 INFO] Total execution time: 05 s.
+[18:49:53] [18:49:53 INFO] citydb successfully completed.
+[18:49:53] ✅ CityGML exported: export_lod2_20260223_184946.gml (51.99 MB)
+[18:49:55] 🔄 Step 2: Converting to 3D Tiles...
+[18:49:55] 🔄 Converting CityGML to 3D Tiles...
+[18:49:55] Running: citygml-to-3dtiles "C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod2_20260223_184946....
+[18:49:57] Converting...
+[18:49:57] Reading CityGML file 1/1...
+[18:50:02]  Found 2571 city objects.
+[18:50:04] Converting to 3D Tiles...
+[18:50:12] Writing 3D Tiles...
+[18:50:12] Done.
+[18:50:12] Done.
+[18:50:12] ✅ 3D Tiles created successfully
+[18:50:15] 📦 Step 3: Converting to I3S SLPK...
+[18:50:15] 📦 Converting to I3S SLPK...
+[18:50:15] Running: npx tile-converter --input-type 3DTILES --tileset "converter_tiles/tileset.json" --name "city_model"...
+[18:50:15] npm warn cli npm v11.6.2 does not support Node.js v16.20.2. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+[18:50:16] ------------------------------------------------
+[18:50:16] Starting conversion of 3DTILES
+[18:50:16] ------------------------------------------------
+[18:50:16] Loading egm file...
+[18:50:16] Loading egm file completed!
+[18:50:16] Loading workers source...
+[18:50:16] Loading workers source completed!
+[18:50:16] (node:78552) [DEP0147] DeprecationWarning: In future versions of Node.js, fs.rmdir(path, { recursive: true }) will be removed. Use fs.rm(path, { recursive: true }) instead
+[18:50:16] (Use `node --trace-deprecation ...` to show where the warning was created)
+[18:50:16] Converting glTF v1 to glTF v2 format. This is experimental and may fail.
+[18:50:26] temp_output_i3s\city_model\SceneServer\index.json saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\3dSceneLayer.json saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\metadata.json saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_0\0.bin saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\root\3dNodeIndexDocument.json saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodepages\0.json saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\3dNodeIndexDocument.json saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\shared\sharedResource.json saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_2\0.bin saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_3\0.bin saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_1\0.bin saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_4\0.bin saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_5\0.bin saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_6\0.bin saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_7\0.bin saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\3dSceneLayer.json.gz compressed and saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\root\3dNodeIndexDocument.json.gz compressed and saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_0\0.bin.gz compressed and saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodepages\0.json.gz compressed and saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\shared\sharedResource.json.gz compressed and saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\3dNodeIndexDocument.json.gz compressed and saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_2\0.bin.gz compressed and saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_1\0.bin.gz compressed and saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_6\0.bin.gz compressed and saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_3\0.bin.gz compressed and saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_5\0.bin.gz compressed and saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_7\0.bin.gz compressed and saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_4\0.bin.gz compressed and saved.
+[18:50:26] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\0.bin saved.
+[18:50:27] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\0.bin.gz compressed and saved.
+[18:50:28] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\1.bin saved.
+[18:50:28] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\1.bin.gz compressed and saved.
+[18:50:28] Spawning C:\Program Files\7-Zip\7z.exe a -tzip -mx=0 C:\CITYGML2I3S_WORKFLOW\i3s-CONVERTER-3.0\temp_output_i3s\city_model.slpk .
+[18:50:28] 
+[18:50:28] 7-Zip 25.01 (x64) : Copyright (c) 1999-2025 Igor Pavlov : 2025-08-03
+[18:50:28] 
+[18:50:28] Scanning the drive:
+[18:50:28] 15 folders, 16 files, 4791395 bytes (4680 KiB)
+[18:50:28] 
+[18:50:28] Creating archive: C:\CITYGML2I3S_WORKFLOW\i3s-CONVERTER-3.0\temp_output_i3s\city_model.slpk
+[18:50:28] 
+[18:50:28] Add new data to archive: 15 folders, 16 files, 4791395 bytes (4680 KiB)
+[18:50:28] 
+[18:50:28] 
+[18:50:28] Files read from disk: 16
+[18:50:28] Archive size: 4796361 bytes (4684 KiB)
+[18:50:28] 
+[18:50:28] Everything is Ok
+[18:50:28] 
+[18:50:28] Child process exited with 0
+[18:50:28] ------------------------------------------------
+[18:50:28] Finishing conversion of 3DTILES
+[18:50:28] Total conversion time: 12s
+[18:50:28] Vertex count:  311022
+[18:50:28] File(s) size:  4796361  bytes
+[18:50:28] Percentage of tiles with "ADD" refinement type: 0 %
+[18:50:28] ------------------------------------------------
+[18:50:28] ======================================================================
+[18:50:28] ✅ I3S SLPK created: city_model_lod2_20260223_185028.slpk
+[18:50:28] 📦 File size: 4.57 MB
+[18:50:28] 🎯 LOD: LOD2
+[18:50:28] 📋 Export Mode: Exterior Only
+[18:50:28] 🎯 LOD Mode: Exact Match
+[18:50:28] ======================================================================
+[18:50:31] ======================================================================
+[18:50:31] 🎉 Workflow completed!
+[18:50:31] ======================================================================
+[18:51:10] 🎚️ LOD filter set to: LOD2
+[18:51:23] ✅ Successfully connected to 3d-DB-bau8@localhost
+[18:51:26] 🔍 Loading building components with LOD filter: LOD2...
+[18:51:26] Checking available LODs in database...
+[18:51:26] Available LODs in database:
+[18:51:26]   lod1Solid: 1 features
+[18:51:26]   lod2MultiSurface: 21 features
+[18:51:26]   lod2Solid: 1 features
+[18:51:26]   lod3MultiSurface: 64 features
+[18:51:26] Available building types:
+[18:51:26]   Building: 3
+[18:51:26] Using envelope (bounding box) for footprint extraction...
+[18:51:26] Executing query...
+[18:51:27] 📊 Found 22 building components
+[18:51:27] Component types loaded:
+[18:51:27]   Building: 1
+[18:51:27]   RoofSurface: 3
+[18:51:27]   WallSurface: 16
+[18:51:27]   GroundSurface: 1
+[18:51:27]   OuterFloorSurface: 1
+[18:51:27] LOD distribution:
+[18:51:27]   LOD2: 22
+[18:51:27] 📐 Component bounds calculated:
+[18:51:27]   Center: (48.779972, 9.171228)
+[18:51:27]   Extent: 0.000522° lat × 0.000726° lon
+[18:51:27] 📈 Successfully plotted 22/22 components
+[18:51:27] ✅ 22 building components loaded successfully
+[18:51:30] 📐 Zooming to bounds:
+[18:51:30]   Center: (48.779972, 9.171228)
+[18:51:30]   Min: (48.779711, 9.170865)
+[18:51:30]   Max: (48.780234, 9.171591)
+[18:51:30] 📍 Zoomed to components (zoom level: 18)
+[18:51:38] ======================================================================
+[18:51:38] 🚀 Starting complete workflow for LOD2...
+[18:51:38] 🎯 LOD Filter: LOD2
+[18:51:38] 📋 Export Mode: Exterior Only
+[18:51:38] 🎯 LOD Mode: Exact Match
+[18:51:38] ======================================================================
+[18:51:38] 📤 Step 1: Exporting to CityGML...
+[18:51:38] 📋 Export command:
+[18:51:38] "C:\3dcitydb-master\citydb-tool-1.1.0\citydb.bat" export citygml --db-host "localhost" --db-port 5432 --db-name "3d-DB-bau8" --db-schema citydb --db-username "postgres" --db-password "c1h1u1k1s1" --output "C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod2_20260223_185138.gml" --citygml-version 2.0 --no-appearances --lod 2 --type-name "bldg:Building" --lod-mode and --lod-search-depth all
+[18:51:38] Running: "C:\3dcitydb-master\citydb-tool-1.1.0\citydb.bat" export citygml --db-host "localhost" --db-port 543...
+[18:51:39] [18:51:39 INFO] Starting citydb-tool, version 1.1.0.
+[18:51:39] [18:51:39 INFO] Loading plugins...
+[18:51:39] [18:51:39 INFO] Executing 'export citygml' command.
+[18:51:40] [18:51:40 INFO] Connecting to database postgres@localhost:5432/3d-DB-bau8.
+[18:51:40] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[18:51:40] WARNING: sun.misc.Unsafe::arrayBaseOffset has been called by com.alibaba.fastjson2.util.JDKUtils (file:/C:/3dcitydb-master/citydb-tool-1.1.0/lib/fastjson2-2.0.58.jar)
+[18:51:40] WARNING: Please consider reporting this to the maintainers of class com.alibaba.fastjson2.util.JDKUtils
+[18:51:40] WARNING: sun.misc.Unsafe::arrayBaseOffset will be removed in a future release
+[18:51:40] [18:51:40 INFO] 3D City Database: 5.1.0
+[18:51:40] [18:51:40 INFO] DBMS: PostgreSQL 16.2 (PostGIS 3.4.1, SFCGAL 1.5.0)
+[18:51:40] [18:51:40 INFO] Connection: postgres@localhost:5432/3d-DB-bau8
+[18:51:40] [18:51:40 INFO] Schema: citydb
+[18:51:40] [18:51:40 INFO] SRID: 25832
+[18:51:40] [18:51:40 INFO] SRS name: ETRS89 / UTM zone 32N
+[18:51:40] [18:51:40 INFO] SRS URI: EPSG:25832
+[18:51:40] [18:51:40 INFO] Changelog: disabled
+[18:51:40] [18:51:40 INFO] Database indexes are on.
+[18:51:41] [18:51:41 INFO] Exporting to CityGML file C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod2_20260223_185138.gml.
+[18:51:41] [18:51:41 INFO] Export summary:
+[18:51:41] [18:51:41 INFO] bldg:Building: 1
+[18:51:41] [18:51:41 INFO] con:GroundSurface: 1
+[18:51:41] [18:51:41 INFO] con:OuterFloorSurface: 1
+[18:51:41] [18:51:41 INFO] con:RoofSurface: 3
+[18:51:41] [18:51:41 INFO] con:WallSurface: 16
+[18:51:41] [18:51:41 INFO] Total execution time: 02 s.
+[18:51:41] [18:51:41 INFO] citydb successfully completed.
+[18:51:41] ✅ CityGML exported: export_lod2_20260223_185138.gml (0.03 MB)
+[18:51:44] 🔄 Step 2: Converting to 3D Tiles...
+[18:51:44] 🔄 Converting CityGML to 3D Tiles...
+[18:51:44] Running: citygml-to-3dtiles "C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod2_20260223_185138....
+[18:51:46] Converting...
+[18:51:46] Reading CityGML file 1/1...
+[18:51:46]  Found 1 city objects.
+[18:51:46] Converting to 3D Tiles...
+[18:51:46] Writing 3D Tiles...
+[18:51:46] Done.
+[18:51:46] Done.
+[18:51:46] ✅ 3D Tiles created successfully
+[18:51:48] 📦 Step 3: Converting to I3S SLPK...
+[18:51:48] 📦 Converting to I3S SLPK...
+[18:51:48] Running: npx tile-converter --input-type 3DTILES --tileset "converter_tiles/tileset.json" --name "city_model"...
+[18:51:48] npm warn cli npm v11.6.2 does not support Node.js v16.20.2. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+[18:51:49] ------------------------------------------------
+[18:51:49] Starting conversion of 3DTILES
+[18:51:49] ------------------------------------------------
+[18:51:49] Loading egm file...
+[18:51:49] Loading egm file completed!
+[18:51:49] Loading workers source...
+[18:51:49] Loading workers source completed!
+[18:51:49] (node:32640) [DEP0147] DeprecationWarning: In future versions of Node.js, fs.rmdir(path, { recursive: true }) will be removed. Use fs.rm(path, { recursive: true }) instead
+[18:51:49] (Use `node --trace-deprecation ...` to show where the warning was created)
+[18:51:49] Converting glTF v1 to glTF v2 format. This is experimental and may fail.
+[18:51:49] temp_output_i3s\city_model\SceneServer\index.json saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\3dSceneLayer.json saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\metadata.json saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_0\0.bin saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\root\3dNodeIndexDocument.json saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodepages\0.json saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\3dNodeIndexDocument.json saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_0\0.bin.gz compressed and saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_1\0.bin saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_3\0.bin saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_2\0.bin saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_5\0.bin saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\0.bin saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\shared\sharedResource.json saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_4\0.bin saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_9\0.bin saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_7\0.bin saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_6\0.bin saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_8\0.bin saved.
+[18:51:49] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_11\0.bin saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_10\0.bin saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_14\0.bin saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_12\0.bin saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_15\0.bin saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_13\0.bin saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_16\0.bin saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_17\0.bin saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_18\0.bin saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_19\0.bin saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\3dSceneLayer.json.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\root\3dNodeIndexDocument.json.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodepages\0.json.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\3dNodeIndexDocument.json.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_1\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_2\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_5\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_3\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\shared\sharedResource.json.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_4\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_9\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_7\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_6\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_8\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_11\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_10\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_14\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_12\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_15\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_18\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_16\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_19\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_17\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_13\0.bin.gz compressed and saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\1.bin saved.
+[18:51:50] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\1.bin.gz compressed and saved.
+[18:51:50] Spawning C:\Program Files\7-Zip\7z.exe a -tzip -mx=0 C:\CITYGML2I3S_WORKFLOW\i3s-CONVERTER-3.0\temp_output_i3s\city_model.slpk .
+[18:51:50] 
+[18:51:50] 7-Zip 25.01 (x64) : Copyright (c) 1999-2025 Igor Pavlov : 2025-08-03
+[18:51:50] 
+[18:51:50] Scanning the drive:
+[18:51:50] 27 folders, 28 files, 6437 bytes (7 KiB)
+[18:51:50] 
+[18:51:50] Creating archive: C:\CITYGML2I3S_WORKFLOW\i3s-CONVERTER-3.0\temp_output_i3s\city_model.slpk
+[18:51:50] 
+[18:51:50] Add new data to archive: 27 folders, 28 files, 6437 bytes (7 KiB)
+[18:51:50] 
+[18:51:50] 
+[18:51:50] Files read from disk: 28
+[18:51:50] Archive size: 15427 bytes (16 KiB)
+[18:51:50] 
+[18:51:50] Everything is Ok
+[18:51:50] 
+[18:51:50] Child process exited with 0
+[18:51:50] ------------------------------------------------
+[18:51:50] Finishing conversion of 3DTILES
+[18:51:50] Total conversion time: 1s
+[18:51:50] Vertex count:  144
+[18:51:50] File(s) size:  15427  bytes
+[18:51:50] Percentage of tiles with "ADD" refinement type: 0 %
+[18:51:50] ------------------------------------------------
+[18:51:50] ======================================================================
+[18:51:50] ✅ I3S SLPK created: city_model_lod2_20260223_185150.slpk
+[18:51:50] 📦 File size: 0.01 MB
+[18:51:50] 🎯 LOD: LOD2
+[18:51:50] 📋 Export Mode: Exterior Only
+[18:51:50] 🎯 LOD Mode: Exact Match
+[18:51:50] ======================================================================
+[18:51:52] ======================================================================
+[18:51:52] 🎉 Workflow completed!
+[18:51:52] ======================================================================
+[18:52:00] 📋 Console content copied to clipboard
+[18:52:15] 🎚️ LOD filter set to: LOD3
+[18:52:16] ✅ Successfully connected to 3d-DB-bau8@localhost
+[18:52:21] 🔍 Loading building components with LOD filter: LOD3...
+[18:52:21] Checking available LODs in database...
+[18:52:21] Available LODs in database:
+[18:52:21]   lod1Solid: 1 features
+[18:52:21]   lod2MultiSurface: 21 features
+[18:52:21]   lod2Solid: 1 features
+[18:52:21]   lod3MultiSurface: 64 features
+[18:52:21] Available building types:
+[18:52:21]   Building: 3
+[18:52:21] Using envelope (bounding box) for footprint extraction...
+[18:52:21] Executing query...
+[18:52:21] 📊 Found 64 building components
+[18:52:21] Component types loaded:
+[18:52:21]   RoofSurface: 1
+[18:52:21]   WallSurface: 44
+[18:52:21]   WindowSurface: 13
+[18:52:21]   DoorSurface: 4
+[18:52:21]   GroundSurface: 1
+[18:52:21]   OuterFloorSurface: 1
+[18:52:21] LOD distribution:
+[18:52:21]   LOD3: 64
+[18:52:21] 📐 Component bounds calculated:
+[18:52:21]   Center: (48.779972, 9.171228)
+[18:52:21]   Extent: 0.000522° lat × 0.000726° lon
+[18:52:23] 📈 Successfully plotted 64/64 components
+[18:52:23] ✅ 64 building components loaded successfully
+[18:52:31] ======================================================================
+[18:52:31] 🚀 Starting complete workflow for LOD3...
+[18:52:31] 🎯 LOD Filter: LOD3
+[18:52:31] 📋 Export Mode: Exterior Only
+[18:52:31] 🎯 LOD Mode: Exact Match
+[18:52:31] ======================================================================
+[18:52:31] 📤 Step 1: Exporting to CityGML...
+[18:52:31] 📋 Export command:
+[18:52:31] "C:\3dcitydb-master\citydb-tool-1.1.0\citydb.bat" export citygml --db-host "localhost" --db-port 5432 --db-name "3d-DB-bau8" --db-schema citydb --db-username "postgres" --db-password "c1h1u1k1s1" --output "C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod3_20260223_185231.gml" --citygml-version 2.0 --no-appearances --lod 3 --type-name "bldg:Building" --lod-mode and --lod-search-depth all
+[18:52:31] Running: "C:\3dcitydb-master\citydb-tool-1.1.0\citydb.bat" export citygml --db-host "localhost" --db-port 543...
+[18:52:32] [18:52:32 INFO] Starting citydb-tool, version 1.1.0.
+[18:52:32] [18:52:32 INFO] Loading plugins...
+[18:52:32] [18:52:32 INFO] Executing 'export citygml' command.
+[18:52:32] [18:52:32 INFO] Connecting to database postgres@localhost:5432/3d-DB-bau8.
+[18:52:33] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[18:52:33] WARNING: sun.misc.Unsafe::arrayBaseOffset has been called by com.alibaba.fastjson2.util.JDKUtils (file:/C:/3dcitydb-master/citydb-tool-1.1.0/lib/fastjson2-2.0.58.jar)
+[18:52:33] WARNING: Please consider reporting this to the maintainers of class com.alibaba.fastjson2.util.JDKUtils
+[18:52:33] WARNING: sun.misc.Unsafe::arrayBaseOffset will be removed in a future release
+[18:52:33] [18:52:33 INFO] 3D City Database: 5.1.0
+[18:52:33] [18:52:33 INFO] DBMS: PostgreSQL 16.2 (PostGIS 3.4.1, SFCGAL 1.5.0)
+[18:52:33] [18:52:33 INFO] Connection: postgres@localhost:5432/3d-DB-bau8
+[18:52:33] [18:52:33 INFO] Schema: citydb
+[18:52:33] [18:52:33 INFO] SRID: 25832
+[18:52:33] [18:52:33 INFO] SRS name: ETRS89 / UTM zone 32N
+[18:52:33] [18:52:33 INFO] SRS URI: EPSG:25832
+[18:52:33] [18:52:33 INFO] Changelog: disabled
+[18:52:33] [18:52:33 INFO] Database indexes are on.
+[18:52:33] [18:52:33 INFO] Exporting to CityGML file C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod3_20260223_185231.gml.
+[18:52:34] [18:52:34 INFO] Export summary:
+[18:52:34] [18:52:34 INFO] bldg:Building: 1
+[18:52:34] [18:52:34 INFO] con:DoorSurface: 4
+[18:52:34] [18:52:34 INFO] con:GroundSurface: 1
+[18:52:34] [18:52:34 INFO] con:OuterFloorSurface: 1
+[18:52:34] [18:52:34 INFO] con:RoofSurface: 1
+[18:52:34] [18:52:34 INFO] con:WallSurface: 61
+[18:52:34] [18:52:34 INFO] con:WindowSurface: 13
+[18:52:34] [18:52:34 INFO] Total execution time: 02 s.
+[18:52:34] [18:52:34 INFO] citydb successfully completed.
+[18:52:34] ✅ CityGML exported: export_lod3_20260223_185231.gml (0.08 MB)
+[18:52:35] 🔄 Step 2: Converting to 3D Tiles...
+[18:52:35] 🔄 Converting CityGML to 3D Tiles...
+[18:52:35] Running: citygml-to-3dtiles "C:\CITYGML2I3S_WORKFLOW\CITYGML-2-DB\OUTPUT-CITYGML\export_lod3_20260223_185231....
+[18:52:37] Converting...
+[18:52:37] Reading CityGML file 1/1...
+[18:52:37]  Found 1 city objects.
+[18:52:37] Converting to 3D Tiles...
+[18:52:38] Writing 3D Tiles...
+[18:52:38] Done.
+[18:52:38] Done.
+[18:52:38] ✅ 3D Tiles created successfully
+[18:52:40] 📦 Step 3: Converting to I3S SLPK...
+[18:52:40] 📦 Converting to I3S SLPK...
+[18:52:40] Running: npx tile-converter --input-type 3DTILES --tileset "converter_tiles/tileset.json" --name "city_model"...
+[18:52:40] npm warn cli npm v11.6.2 does not support Node.js v16.20.2. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+[18:52:41] ------------------------------------------------
+[18:52:41] Starting conversion of 3DTILES
+[18:52:41] ------------------------------------------------
+[18:52:41] Loading egm file...
+[18:52:41] Loading egm file completed!
+[18:52:41] Loading workers source...
+[18:52:41] Loading workers source completed!
+[18:52:41] (node:32300) [DEP0147] DeprecationWarning: In future versions of Node.js, fs.rmdir(path, { recursive: true }) will be removed. Use fs.rm(path, { recursive: true }) instead
+[18:52:41] (Use `node --trace-deprecation ...` to show where the warning was created)
+[18:52:41] Converting glTF v1 to glTF v2 format. This is experimental and may fail.
+[18:52:42] temp_output_i3s\city_model\SceneServer\index.json saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\3dSceneLayer.json saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\metadata.json saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_0\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\3dNodeIndexDocument.json saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodepages\0.json saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\root\3dNodeIndexDocument.json saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_0\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_2\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_1\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\shared\sharedResource.json saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_5\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_4\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_3\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_6\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_9\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_8\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_10\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_11\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_13\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_7\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_12\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_15\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_14\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_16\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_17\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_18\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_19\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\3dSceneLayer.json.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_20\0.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodepages\0.json.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_2\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\root\3dNodeIndexDocument.json.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_1\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\shared\sharedResource.json.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\3dNodeIndexDocument.json.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_5\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_4\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_3\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_6\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_9\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_8\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_10\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_11\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_13\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_7\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_12\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_15\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_14\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_16\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_17\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_18\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_19\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\attributes\f_20\0.bin.gz compressed and saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\1.bin saved.
+[18:52:42] temp_output_i3s\city_model\SceneServer\layers\0\nodes\1\geometries\1.bin.gz compressed and saved.
+[18:52:42] Spawning C:\Program Files\7-Zip\7z.exe a -tzip -mx=0 C:\CITYGML2I3S_WORKFLOW\i3s-CONVERTER-3.0\temp_output_i3s\city_model.slpk .
+[18:52:42] 
+[18:52:42] 7-Zip 25.01 (x64) : Copyright (c) 1999-2025 Igor Pavlov : 2025-08-03
+[18:52:42] 
+[18:52:42] Scanning the drive:
+[18:52:42] 28 folders, 29 files, 12532 bytes (13 KiB)
+[18:52:42] 
+[18:52:42] Creating archive: C:\CITYGML2I3S_WORKFLOW\i3s-CONVERTER-3.0\temp_output_i3s\city_model.slpk
+[18:52:42] 
+[18:52:42] Add new data to archive: 28 folders, 29 files, 12532 bytes (13 KiB)
+[18:52:42] 
+[18:52:42] 
+[18:52:42] Files read from disk: 29
+[18:52:42] Archive size: 21858 bytes (22 KiB)
+[18:52:42] 
+[18:52:42] Everything is Ok
+[18:52:42] 
+[18:52:42] Child process exited with 0
+[18:52:42] ------------------------------------------------
+[18:52:42] Finishing conversion of 3DTILES
+[18:52:42] Total conversion time: 1s
+[18:52:42] Vertex count:  579
+[18:52:42] File(s) size:  21858  bytes
+[18:52:42] Percentage of tiles with "ADD" refinement type: 0 %
+[18:52:42] ------------------------------------------------
+[18:52:42] ======================================================================
+[18:52:42] ✅ I3S SLPK created: city_model_lod3_20260223_185242.slpk
+[18:52:42] 📦 File size: 0.02 MB
+[18:52:42] 🎯 LOD: LOD3
+[18:52:42] 📋 Export Mode: Exterior Only
+[18:52:42] 🎯 LOD Mode: Exact Match
+[18:52:42] ======================================================================
+[18:52:44] ======================================================================
+[18:52:44] 🎉 Workflow completed!
+[18:52:44] ======================================================================
+
