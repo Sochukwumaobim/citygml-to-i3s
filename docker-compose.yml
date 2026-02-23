@@ -1,0 +1,42 @@
+﻿version: '3.8'
+
+services:
+  citygml-converter:
+    build: .
+    container_name: citygml-i3s-converter
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=3d-DB-tum
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=c1h1u1k1s1
+      - POSTGRES_SCHEMA=citydb
+      - OUTPUT_NAME=tum_campus
+      - MAX_DEPTH=6
+      - LOD_FILTER=2
+      - EXPORT_MODE=Exterior Only
+      - LOD_MODE=Exact Match
+      - WAIT_FOR_DB=true
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+      - ./data:/app/data
+    depends_on:
+      - postgres
+    user: "root"  # Run as root to avoid permission issues
+  
+  postgres:
+    image: postgis/postgis:15-3.3
+    container_name: citygml-postgres
+    environment:
+      - POSTGRES_DB=3d-DB-tum
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=c1h1u1k1s1
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  postgres_data:
