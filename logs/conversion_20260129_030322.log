@@ -1,0 +1,41 @@
+2026-01-29 03:03:22,013 - INFO - ============================================================
+2026-01-29 03:03:22,014 - INFO - Starting CityGML to I3S Conversion Workflow
+2026-01-29 03:03:22,014 - INFO - ============================================================
+2026-01-29 03:03:22,016 - INFO - Database: host.docker.internal:5432/3d-DB-tum
+2026-01-29 03:03:22,017 - INFO - User: postgres
+2026-01-29 03:03:22,018 - INFO - LOD Filter: 2
+2026-01-29 03:03:22,018 - INFO - ============================================================
+2026-01-29 03:03:22,019 - INFO - Step 1: Exporting database to CityGML...
+2026-01-29 03:03:22,020 - INFO - ============================================================
+2026-01-29 03:03:22,021 - INFO - Exporting to CityGML: /app/output/export_20260129_030322.gml
+2026-01-29 03:03:22,022 - INFO - Running command: citydb export citygml --db-host host.docker.internal --db-port 5432 --db-name 3d-DB-tum --db-schema... [password hidden]
+2026-01-29 03:03:25,990 - INFO - ✅ CityGML export completed
+2026-01-29 03:03:25,993 - INFO - 📁 File created: export_20260129_030322.gml (0.21 MB)
+2026-01-29 03:03:25,994 - INFO - ============================================================
+2026-01-29 03:03:25,994 - INFO - Step 2: Converting CityGML to 3D Tiles...
+2026-01-29 03:03:25,995 - INFO - ============================================================
+2026-01-29 03:03:25,995 - INFO - Converting CityGML to 3D Tiles...
+2026-01-29 03:03:26,003 - INFO - 🧹 Cleaned existing directory: /app/output/3dtiles
+2026-01-29 03:03:26,008 - INFO - ✅ Directory is writable: /app/output/3dtiles
+2026-01-29 03:03:26,008 - INFO - Running command: citygml-to-3dtiles /app/output/export_20260129_030322.gml /app/output/3dtiles
+2026-01-29 03:03:28,347 - INFO - ✅ 3D Tiles conversion completed
+2026-01-29 03:03:28,351 - INFO - ✅ Found tileset.json: /app/output/3dtiles/tileset.json
+2026-01-29 03:03:28,352 - INFO - ============================================================
+2026-01-29 03:03:28,352 - INFO - Step 3: Converting 3D Tiles to I3S SLPK...
+2026-01-29 03:03:28,352 - INFO - ============================================================
+2026-01-29 03:03:28,353 - INFO - Converting 3D Tiles to I3S SLPK...
+2026-01-29 03:03:28,362 - INFO - ✅ I3S directory is writable: /app/output/i3s
+2026-01-29 03:03:28,368 - INFO - Using tileset: /app/output/3dtiles/tileset.json
+2026-01-29 03:03:28,369 - INFO - Running without EGM file (optional for height adjustment)
+2026-01-29 03:03:28,369 - INFO - Running command: npx tile-converter --input-type 3DTILES --tileset /app/output/3dtiles/tileset.json --name tum_campus --output /app/output/i3s --max-depth 6 --slpk
+2026-01-29 03:03:31,298 - INFO - ✅ I3S conversion completed
+2026-01-29 03:03:31,306 - INFO - ✅ SLPK file created: tum_campus.slpk (0.05 MB)
+2026-01-29 03:03:31,323 - INFO - 📁 SLPK copied to: /app/output/tum_campus.slpk
+2026-01-29 03:03:31,323 - INFO - ============================================================
+2026-01-29 03:03:31,324 - INFO - ✅ CONVERSION COMPLETED SUCCESSFULLY!
+2026-01-29 03:03:31,324 - INFO - ============================================================
+2026-01-29 03:03:31,324 - INFO - 📦 Final SLPK file: /app/output/tum_campus.slpk
+2026-01-29 03:03:31,326 - INFO - 📊 File size: 0.05 MB
+2026-01-29 03:03:31,326 - INFO - 🎯 LOD Filter: 2
+2026-01-29 03:03:31,327 - INFO - 📁 All output in: /app/output
+2026-01-29 03:03:31,327 - INFO - ============================================================

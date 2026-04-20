@@ -1,0 +1,69 @@
+2026-01-29 02:33:59,492 - INFO - ============================================================
+2026-01-29 02:33:59,492 - INFO - Starting CityGML to I3S Conversion Workflow
+2026-01-29 02:33:59,493 - INFO - ============================================================
+2026-01-29 02:33:59,493 - INFO - Database: host.docker.internal:5432/3d-DB-tum
+2026-01-29 02:33:59,494 - INFO - User: postgres
+2026-01-29 02:33:59,494 - INFO - LOD Filter: 2
+2026-01-29 02:33:59,495 - INFO - ============================================================
+2026-01-29 02:33:59,496 - INFO - Step 1: Exporting database to CityGML...
+2026-01-29 02:33:59,496 - INFO - ============================================================
+2026-01-29 02:33:59,497 - INFO - Exporting to CityGML: /app/output/export_20260129_023359.gml
+2026-01-29 02:33:59,497 - INFO - Running command: citydb export citygml --db-host host.docker.internal --db-port 5432 --db-name 3d-DB-tum --db-schema citydb --db-username postgres --db-password c1h1u1k1s1 --output /app/output/export_20260129_023359.gml --citygml-version 2.0 --no-appearances --lod 2 --type-name bldg:Building --lod-mode and
+2026-01-29 02:34:02,727 - INFO - ✅ CityGML export completed
+2026-01-29 02:34:02,729 - INFO - 📁 File created: export_20260129_023359.gml (0.21 MB)
+2026-01-29 02:34:02,729 - INFO - ============================================================
+2026-01-29 02:34:02,729 - INFO - Step 2: Converting CityGML to 3D Tiles...
+2026-01-29 02:34:02,730 - INFO - ============================================================
+2026-01-29 02:34:02,730 - INFO - Converting CityGML to 3D Tiles...
+2026-01-29 02:34:02,743 - INFO - ✅ Directory is writable: /app/output/3dtiles
+2026-01-29 02:34:02,743 - INFO - Running command: citygml-to-3dtiles /app/output/export_20260129_023359.gml /app/output/3dtiles
+2026-01-29 02:34:04,242 - INFO - ✅ 3D Tiles conversion completed
+2026-01-29 02:34:04,243 - INFO - Output: Converting...
+Reading CityGML file 1/1...
+ Found 1 city objects.
+Converting to 3D Tiles...
+Writing 3D Tiles...
+Done.
+Done.
+...
+2026-01-29 02:34:04,247 - INFO - ✅ Found tileset.json: /app/output/3dtiles/tileset.json
+2026-01-29 02:34:04,247 - INFO - ============================================================
+2026-01-29 02:34:04,248 - INFO - Step 3: Converting 3D Tiles to I3S SLPK...
+2026-01-29 02:34:04,249 - INFO - ============================================================
+2026-01-29 02:34:04,249 - INFO - Converting 3D Tiles to I3S SLPK...
+2026-01-29 02:34:04,259 - INFO - Using tileset: /app/output/3dtiles/tileset.json
+2026-01-29 02:34:04,260 - INFO - Using EGM file: /app/egm2008-5.pgm
+2026-01-29 02:34:04,260 - INFO - Running command: npx tile-converter --input-type 3DTILES --tileset /app/output/3dtiles/tileset.json --name tum_campus --output /app/output/i3s --max-depth 6 --slpk --egm /app/egm2008-5.pgm
+2026-01-29 02:34:04,866 - ERROR - ❌ I3S conversion failed
+2026-01-29 02:34:04,867 - ERROR - stderr: 
+2026-01-29 02:34:04,867 - ERROR - stdout: ------------------------------------------------
+Starting conversion of 3DTILES
+------------------------------------------------
+Loading egm file...
+Error: Geoid model file: File not in PGM format
+    at Cd (/usr/lib/node_modules/@loaders.gl/tile-converter/dist/converter.min.js:292:276463)
+    at Object.parse (/usr/lib/node_modules/@loaders.gl/tile-converter/dist/converter.min.js:292:278469)
+    at /usr/lib/node_modules/@loaders.gl/tile-converter/dist/converter.min.js:292:130301
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Yo (/usr/lib/node_modules/@loaders.gl/tile-converter/dist/converter.min.js:292:129653)
+    at async $o (/usr/lib/node_modules/@loaders.gl/tile-converter/dist/converter.min.js:292:130581)
+    at async xv.convert (/usr/lib/node_modules/@loaders.gl/tile-converter/dist/converter.min.js:292:415222)
+    at async /usr/lib/node_modules/@loaders.gl/tile-converter/dist/converter.min.js:292:438707
+    at async /usr/lib/node_modules/@loaders.gl/tile-converter/dist/converter.min.js:292:438304
+
+2026-01-29 02:34:04,868 - ERROR - ============================================================
+2026-01-29 02:34:04,868 - ERROR - ❌ CONVERSION FAILED!
+2026-01-29 02:34:04,869 - ERROR - ============================================================
+2026-01-29 02:34:04,869 - ERROR - Error: Command '['npx', 'tile-converter', '--input-type', '3DTILES', '--tileset', '/app/output/3dtiles/tileset.json', '--name', 'tum_campus', '--output', '/app/output/i3s', '--max-depth', '6', '--slpk', '--egm', '/app/egm2008-5.pgm']' returned non-zero exit status 1.
+2026-01-29 02:34:04,875 - ERROR - Traceback: Traceback (most recent call last):
+  File "/app/scripts/citygml_to_i3s.py", line 375, in main
+    slpk_file = convert_to_i3s(tiles_dir, args.output_dir, args.output_name, args.max_depth, logger)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/scripts/citygml_to_i3s.py", line 242, in convert_to_i3s
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['npx', 'tile-converter', '--input-type', '3DTILES', '--tileset', '/app/output/3dtiles/tileset.json', '--name', 'tum_campus', '--output', '/app/output/i3s', '--max-depth', '6', '--slpk', '--egm', '/app/egm2008-5.pgm']' returned non-zero exit status 1.
+
+2026-01-29 02:34:04,876 - ERROR - ============================================================
